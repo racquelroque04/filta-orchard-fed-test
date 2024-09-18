@@ -1,0 +1,30 @@
+@import '../../sass/fonts';
+
+.rootF {
+    display: block;
+    margin: 150px 0px;
+}
+
+.header {
+    margin-bottom: 15px !important;
+}
+
+.divider {
+    border-color: #fff !important;
+}
+
+.pl_12{
+    padding-left: 12px;
+}
+.description {
+    padding-top: 30px;
+    padding-right: 14px;
+    padding-bottom: 20px;
+    text-align: -webkit-left;
+
+    &_caution {
+        font-family: 'OpenSans SemiBold' !important;
+        font-weight: 800 !important;
+        margin-top: 12px !important;
+    }
+}
