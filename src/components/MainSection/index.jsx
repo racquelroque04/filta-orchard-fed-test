@@ -1,40 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
   Box,
   Divider,
   Grid2 as Grid,
-  Typography
+  Typography,
+  Modal
 } from "@mui/material";
-import * as styles from './index.module.scss';
 import {
   Component1Img1,
   Component1Img2,
   Component1Img3
-} from '../../assets/images/index'
+} from '../../assets/images/index';
+import * as styles from './index.module.scss';
+import sxStyle from "./boxStyle";
+
 
 const MainSection = () => {
+  const [open, setOpen] = useState(false);
+  const [image, setImage] = useState(null);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const openImage = (imageComponent) => {
+    handleOpen();
+    setImage(imageComponent)
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }} className={styles.rootF}>
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, md: 4 }}> 
-            <img
-              src={Component1Img1}
-              style={{ maxWidth: "100%" }}
-            />
+            <div className={styles.divImage} onClick={() => openImage(Component1Img1)}>
+              <img
+                src={Component1Img1}
+                className={styles.img}
+              />
+            </div>
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>
             <Grid container spacing={2}>
               <Grid>
-                <img
-                  src={Component1Img2}
-                  style={{ maxWidth: "100%" }}
-                />
+                <div className={styles.divImage} onClick={() => openImage(Component1Img2)}>
+                  <img
+                    src={Component1Img2}
+                    className={styles.img}
+                  />
+                </div>
               </Grid>
               <Grid>
-                <img
-                  src={Component1Img3}
-                  style={{ maxWidth: "100%" }}
-                />
+                <div className={styles.divImage} onClick={() => openImage(Component1Img3)}>
+                  <img
+                    src={Component1Img3}
+                    className={styles.img}
+                  />
+                </div>
               </Grid>
             </Grid>
           </Grid>
@@ -69,6 +88,14 @@ const MainSection = () => {
             </Grid>
           </Grid>
         </Grid>
+        <Modal
+          open={open}
+          onClose={handleClose}
+        >
+        <Box sx={sxStyle}>
+          <img src={image} style={{ maxWidth: "100%" }}/>
+        </Box>
+      </Modal>
     </Box>
   );
 };

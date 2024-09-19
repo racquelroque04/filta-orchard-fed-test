@@ -3,14 +3,63 @@
 .rootF {
     display: block;
 }
+
 .title {
     font-family: 'OpenSans SemiBold' !important;
     font-weight: 800 !important;
     margin-top: 12px !important;
     text-align: left;
 }
+
 .labelDesc {
     text-align: left;
     padding-top: 16px;;
     font-size: 16px !important;
+}
+
+
+.img {
+    max-width: 100%;
+    cursor: pointer;
+    border-bottom: 3px solid red;
+}
+
+.anchorImage:hover .img {
+    opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.readMore {
+    text-align: left;
+    margin-top: 30px;
+
+    & > a > p {
+        color: white;
+        font-family: 'OpenSans SemiBold' !important;
+        font-size: 15px;
+    }
+}
+
+.divider {
+    border-color: red !important;
+    width: 88px;
+    padding-top: 6px;
 }

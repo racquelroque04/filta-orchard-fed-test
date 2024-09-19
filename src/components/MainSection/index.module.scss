@@ -16,6 +16,7 @@
 .pl_12{
     padding-left: 12px;
 }
+
 .description {
     padding-top: 30px;
     padding-right: 14px;
@@ -27,4 +28,16 @@
         font-weight: 800 !important;
         margin-top: 12px !important;
     }
+}
+
+.img {
+    max-width: 100%;
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.divImage:hover img {
+    opacity: .8;
 }
